@@ -1,23 +1,20 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <ChallengeList :itemsList="avaliableChallenges"/>
+      <h1>{{selectedChallenge}}</h1>
     </v-main>
   </v-app>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup lang="ts">
+import {ref} from "vue"
+import ChallengeList from "./components/ChallengeList.vue"
 
-export default {
-  name: 'App',
+var selectedChallenge = ref('____________')
 
-  components: {
-    HelloWorld,
-  },
+const avaliableChallenges = [
+  'Name Generator'
+]
 
-  data: () => ({
-    //
-  }),
-}
 </script>
