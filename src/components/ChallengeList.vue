@@ -19,19 +19,29 @@
       </v-list>
     </v-navigation-drawer>
   </v-container>
+  <!-- Component of the selected Item will be here: -->
+  <v-container>
+    
+    <NameGenerator v-if="selectedItem == "/>
+  </v-container>
 </template>
 
 <script setup lang="ts">
 import logo from "../assets/logo.svg";
 import { ref } from "vue"
+import NameGenerator from "@/components/NameGenerator.vue"
+
 
 // const mensagem = ref("teste mensagem")
-
 // const props = defineProps(['itemList'])
 
 const props = defineProps<{
   itemsList: Array<string>,
 }>()
+
+var selectedItem = 'Name Generator'
+
+// console.log(props)
 
 // const items = itemsList
 const right = null
